@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +7,7 @@ namespace Pokedex.Data;
 
 public class AppDbContext : IdentityDbContext
 {
+
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
@@ -24,20 +24,19 @@ public class AppDbContext : IdentityDbContext
         base.OnModelCreating(builder);
 
         #region Muitos para Muitos do Pokemon Tipo
-        builder.Entity<PokemonTipo>().HasKey(   //Chave primária composta
-            pt => new {pt.PokemonNumero, pt.TipoId}
+        builder.Entity<PokemonTipo>().HasKey(
+            pt => new { pt.PokemonNumero, pt.TipoId }
         );
 
         builder.Entity<PokemonTipo>()
-        .HasOne(pt => pt.Pokemon)
-        .WithMany(p => p.Tipos)
-        .HasForeignKey(pt => pt.PokemonNumero);
+            .HasOne(pt => pt.Pokemon)
+            .WithMany(p => p.Tipos)
+            .HasForeignKey(pt => pt.PokemonNumero);
 
         builder.Entity<PokemonTipo>()
-        .HasOne(pt => pt.Tipo) // Objeto
-        .WithMany(t => t.Pokemons)
-        .HasForeignKey(pt => pt.TipoId);
-
+            .HasOne(pt => pt.Tipo)
+            .WithMany(t => t.Pokemons)
+            .HasForeignKey(pt => pt.TipoId);
         #endregion
 
         #region Populate Roles - Perfis de Usuário
@@ -81,8 +80,8 @@ public class AppDbContext : IdentityDbContext
         List<Usuario> usuarios = new(){
             new Usuario(){
                 UsuarioId = users[0].Id,
-                Nome = "Erick Reis",
-                DataNascimento = DateTime.Parse("18/06/2003"),
+                Nome = "José Antonio Gallo Junior",
+                DataNascimento = DateTime.Parse("05/08/1981"),
                 Foto = "/img/users/avatar.png"
             }
         };
@@ -103,6 +102,6 @@ public class AppDbContext : IdentityDbContext
         };
         builder.Entity<IdentityUserRole<string>>().HasData(userRoles);
         #endregion
-
     }
+
 }

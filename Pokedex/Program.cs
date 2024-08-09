@@ -5,10 +5,11 @@ using Pokedex.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-string conexao = builder.Configuration.GetConnectionString("PokedexConexao");
-var versao = ServerVersion.AutoDetect(conexao); // Versão do banco de dados
+string conexao = builder.Configuration
+    .GetConnectionString("PokedexConexao");
+var versao = ServerVersion.AutoDetect(conexao);
 builder.Services.AddDbContext<AppDbContext>(
-    options => options.UseMySql(conexao, versao)
+    opt => opt.UseMySql(conexao, versao)
 );
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()

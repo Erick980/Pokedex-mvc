@@ -12,7 +12,7 @@ using Pokedex.Data;
 namespace Pokedex.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240802232350_inicializando-banco")]
+    [Migration("20240808002521_inicializando-banco")]
     partial class inicializandobanco
     {
         /// <inheritdoc />
@@ -53,13 +53,13 @@ namespace Pokedex.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0ab0dd5a-7058-4cf3-86e7-e64acd3dfcd5",
+                            Id = "5c8bf0e3-0c51-450b-b115-42c24bee0d4e",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "43e5007c-b21f-4e3f-a828-e603063aa63c",
+                            Id = "13375524-ac9a-437f-ad80-868a5728cc38",
                             Name = "Usuário",
                             NormalizedName = "USUÁRIO"
                         });
@@ -156,17 +156,17 @@ namespace Pokedex.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8627be17-0de6-4741-ade6-b66da2aa1a24",
+                            Id = "5f864fa9-b1aa-4a7b-834e-f07ae4338019",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dd01b6c2-7de4-449f-8455-b0042d45fc93",
+                            ConcurrencyStamp = "82169f18-98c4-421b-bd21-34dc4c3724a2",
                             Email = "admin@pokedex.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@POKEDEX.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDrojArSXI6LJ19Jim5zGeaWhm77D0m0quRkMeJefICbwZ1Worc8vzh8mIUDkSl8Pg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAED095sGWb9eN3BianF6Vlk5Na4PQR7cqy4/RvtdhtQ32yx2QNPv57yZxHzzJmIW2AA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ec25f140-e68c-4b93-afda-f284574814c6",
+                            SecurityStamp = "86fd4a3f-62d2-4053-8565-e4ef847675a8",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -236,13 +236,13 @@ namespace Pokedex.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "8627be17-0de6-4741-ade6-b66da2aa1a24",
-                            RoleId = "0ab0dd5a-7058-4cf3-86e7-e64acd3dfcd5"
+                            UserId = "5f864fa9-b1aa-4a7b-834e-f07ae4338019",
+                            RoleId = "5c8bf0e3-0c51-450b-b115-42c24bee0d4e"
                         },
                         new
                         {
-                            UserId = "8627be17-0de6-4741-ade6-b66da2aa1a24",
-                            RoleId = "43e5007c-b21f-4e3f-a828-e603063aa63c"
+                            UserId = "5f864fa9-b1aa-4a7b-834e-f07ae4338019",
+                            RoleId = "13375524-ac9a-437f-ad80-868a5728cc38"
                         });
                 });
 
@@ -408,10 +408,10 @@ namespace Pokedex.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "8627be17-0de6-4741-ade6-b66da2aa1a24",
-                            DataNascimento = new DateTime(2003, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UsuarioId = "5f864fa9-b1aa-4a7b-834e-f07ae4338019",
+                            DataNascimento = new DateTime(1981, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/users/avatar.png",
-                            Nome = "Erick Reis"
+                            Nome = "José Antonio Gallo Junior"
                         });
                 });
 
