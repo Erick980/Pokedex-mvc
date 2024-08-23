@@ -9,6 +9,7 @@ public class LoginVM
     [Required(ErrorMessage = "Informe seu email ou nome de usuário")]
     public string Email { get; set; }
 
+    [DataType(DataType.Password)] // oculta senha
     [Display(Name = "Senha de Acesso", Prompt = "Senha de Acesso")]
     [Required(ErrorMessage = "Informe sua senha de Acesso")]
     public string Senha { get; set; }

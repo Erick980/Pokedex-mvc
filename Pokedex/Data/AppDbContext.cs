@@ -73,15 +73,15 @@ public class AppDbContext : IdentityDbContext
         foreach (var user in users)
         {
             PasswordHasher<IdentityUser> pass = new();
-            user.PasswordHash = pass.HashPassword(user, "@Etec123");
+            user.PasswordHash = pass.HashPassword(user, "@capivara980");
         }
         builder.Entity<IdentityUser>().HasData(users);
 
         List<Usuario> usuarios = new(){
             new Usuario(){
                 UsuarioId = users[0].Id,
-                Nome = "José Antonio Gallo Junior",
-                DataNascimento = DateTime.Parse("05/08/1981"),
+                Nome = "Erick Reis",
+                DataNascimento = DateTime.Parse("18/06/2003"),
                 Foto = "/img/users/avatar.png"
             }
         };
